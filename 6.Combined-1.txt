@@ -1,0 +1,95 @@
+Q.1 A company is hosting a web application on AWS using a single Amazon EC2 
+instance that stores user-uploaded documents in an Amazon EBS volume. 
+For better scalability and availability, the company duplicated the architecture 
+and created a second EC2 instance and EBS volume in another Availability Zone, 
+placing both behind an Application Load Balancer. After completing this change, 
+users reported that, each time they refreshed the website, they could see one 
+subset of their documents or the other, but never all of the documents at the 
+same time.What should a solutions architect propose to ensure users see 
+all of their documents at once?
+A.Copy the data so both EBS volumes contain all the documents
+B.Configure the Application Load Balancer to direct a user to the server 
+with the documents
+C..Copy the data from both EBS volumes to Amazon EFS. Modify the application 
+to save new documents to Amazon EFS
+D.Configure the Application Load Balancer to send the request to both servers. 
+Return each document from the correct server
+
+Q.2 A company has an application that runs on Amazon EC2 instances and uses 
+an Amazon Aurora database. The EC2 instances connect to the database by using
+user names and passwords that are stored locally in a file. The company wants 
+to minimize the operational overhead of credential management.
+What should a solutions architect do to accomplish this goal?
+A..Use AWS Secrets Manager. Turn on automatic rotation. 
+B.Use AWS Systems Manager Parameter Store. Turn on automatic rotation.
+C.Create an Amazon S3 bucket to store objects that are encrypted with an 
+AWS Key Management Service (AWS KMS) encryption key. Migrate the credential 
+file to the S3 bucket. Point the application to the S3 bucket.
+D.Create an encrypted Amazon Elastic Block Store (Amazon EBS) volume for 
+each EC2 instance. Attach the new EBS volume to each EC2 instance. 
+Migrate the credential file to the new EBS volume. Point the application to 
+the new EBS volume.
+
+Q.3 A company runs an ecommerce application on Amazon EC2 instances 
+behind an Application Load Balancer. The instances run in an Amazon EC2 
+Auto Scaling group across multiple Availability Zones. The Auto Scaling group 
+scales based on CPU utilization metrics. The ecommerce application stores the 
+transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance.
+The database's performance degrades quickly as application load increases. 
+The application handles more read requests than write transactions. 
+The company wants a solution that will automatically scale the database 
+to meet the demand of unpredictable read workloads while maintaining high 
+availability. Which solution will meet these requirements?
+A.Use Amazon Redshift with a single node for leader and compute functionality.
+B.Use Amazon RDS with a Single-AZ deployment. Configure Amazon RDS to add 
+reader instances in a different Availability Zone.
+C..Use Amazon Aurora with a Multi-AZ deployment. Configure Aurora Auto 
+Scaling with Aurora Replicas.
+D.Use Amazon ElastiCache for Memcached with EC2 Spot Instances.
+
+Q.4 A company is implementing a new business application. The application runs 
+on two Amazon EC2 instances and uses an Amazon S3 bucket for document 
+storage. A solutions architect needs to ensure that the EC2 instances can 
+access the S3 bucket.What should the solutions architect do to meet this 
+requirement?
+A..Create an IAM role that grants access to the S3 bucket. Attach the role to the 
+EC2 instances.
+B.Create an IAM policy that grants access to the S3 bucket. Attach the 
+policy to the EC2 instances.
+C.Create an IAM group that grants access to the S3 bucket. Attach the 
+group to the EC2 instances.
+D.Create an IAM user that grants access to the S3 bucket. Attach the user 
+account to the EC2 instances.
+
+Q.5 A company wants to improve its ability to clone large amounts of production 
+data into a test environment in the same AWS Region. The data is stored in 
+Amazon EC2 instances on Amazon Elastic Block Store (Amazon EBS) volumes. 
+Modifications to the cloned data must not affect the production environment. 
+The software that accesses this data requires consistently high I/O performance.
+A solutions architect needs to minimize the time that is required to clone the 
+production data into the test environment.
+Which solution will meet these requirements?
+A.Take EBS snapshots of the production EBS volumes. Restore the snapshots 
+onto EC2 instance store volumes in the test environment.
+B.Configure the production EBS volumes to use the EBS Multi-Attach feature. 
+Take EBS snapshots of the production EBS volumes. Attach the production 
+EBS volumes to the EC2 instances in the test environment.
+C.Take EBS snapshots of the production EBS volumes. Create and initialize 
+new EBS volumes. Attach the new EBS volumes to EC2 instances in the test 
+environment before restoring the volumes from the production EBS snapshots.
+D..Take EBS snapshots of the production EBS volumes. Turn on the EBS fast 
+snapshot restore feature on the EBS snapshots. Restore the snapshots into 
+new EBS volumes. Attach the new EBS volumes to EC2 instances in the test 
+environment.
+
+Q.6 A solutions architect is using Amazon S3 to design the storage architecture 
+of a new digital media application. The media files must be resilient to the loss 
+of an Availability Zone. Some files are accessed frequently while other files are 
+rarely accessed in an unpredictable pattern. The solutions architect must 
+minimize the costs of storing and retrieving the media files.
+Which storage option meets these requirements?
+A.S3 Standard
+B..S3 Intelligent-Tiering
+C.S3 Standard-Infrequent Access (S3 Standard-IA)
+D.S3 One Zone-Infrequent Access (S3 One Zone-IA)
+
